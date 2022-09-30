@@ -47,7 +47,7 @@ class Grid:
         i=0
         suivant = 0 #compteur de lignes de meme couleur
         jeton=self.grid[line][column] #initialisation -> le jeton qui vient d etre joue est pris pour reference
-        for i in range(self.lines): #parcours de toute la ligne de la colonne considere
+        for i in range(self.lines): #parcours de toute la ligne de la colonne consideree
             if self.grid[i][column] == jeton: #comparaison avec le type de jeton passe en parametre
                 suivant += 1 #increment du compteur de jeton de meme couleur
                 if suivant == 4: 
@@ -61,8 +61,13 @@ class Grid:
         return False
 
     def tie(self) -> bool:
-        # TODO
-        return False
+        i=0 #indice de boucle
+        j=0 #indice de boucle
+        for i in range(self.lines) :
+            for j in range(self.columns) :
+                if self.grid[i][j]=='.' :
+                    return False
+        return True
 
 
 class Player:

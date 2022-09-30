@@ -43,8 +43,20 @@ class Grid:
                     return True
             else:
                 adjacent = 0
+        #Vertical
+        i=0
+        suivant = 0 #compteur de lignes de meme couleur
+        jeton=self.grid[line][column] #initialisation -> le jeton qui vient d etre joue est pris pour reference
+        for i in range(self.lines): #parcours de toute la ligne de la colonne considere
+            if self.grid[i][column] == jeton: #comparaison avec le type de jeton passe en parametre
+                suivant += 1 #increment du compteur de jeton de meme couleur
+                if suivant == 4: 
+                    return True #retourne vrai et quitte la fonction si colonne gagnee
+            else:
+                suivant = 0 #sinon remet le compteur a zero
 
-        # TODO: Vertical
+
+
         # TODO: Diagonal
         return False
 

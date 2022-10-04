@@ -2,6 +2,8 @@ from .game import Grid, Player
 from .game import Cell #Ajout de la classe Cell
 
 class DumbIA(Player):
+    """IA which play on the column of the first possible empty cell it finds."""
+
     def play(self, grid: Grid) -> int:
         i=0 # indice de boucle
         j=0 #indice de boucle

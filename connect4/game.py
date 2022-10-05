@@ -63,12 +63,17 @@ class Grid:
     def tie(self) -> bool:
         i=0 #indice de boucle
         j=0 #indice de boucle
+        full=0 #compteur de cases pleines
         for i in range(self.lines) :
             for j in range(self.columns) :
-                if self.grid[i][j]=='.' :
-                    return False
-        return True
+                if self.grid[i][j]!=Cell.EMPTY :
+                    full=full+1 #incrementation du compteur
 
+        if full== (self.lines)*(self.columns) : #nombre de cases = nb_li x nb_col
+            return True #retourne vrai et quitte la fonctions
+        
+        return False #retourne faux si le test n est pas franchi et quitte la fonction
+       
 
 class Player:
     def play(self, grid: Grid) -> int:

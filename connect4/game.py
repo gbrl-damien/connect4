@@ -1,3 +1,8 @@
+###
+# Damien GABRIEL CALIXTE - M2 AURO
+# Projet disponible sur : https://github.com/gbrl-damien/connect4
+# Numéro étudiant : 21900784
+###
 from enum import Enum
 
 
@@ -65,9 +70,13 @@ class Grid:
             else:
                 suivant = 0 #sinon remet le compteur a zero
 
+        #Diagonal
+        #i=0 #initialisation de l indice de boucle
+        #j=0 #initialisation de l indice de boucle
 
-
-        # TODO: Diagonal
+        #if self.grid[]<i
+        
+        
         return False
 
     def tie(self) -> bool:
